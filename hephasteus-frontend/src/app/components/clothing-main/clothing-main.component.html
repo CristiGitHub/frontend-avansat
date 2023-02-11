@@ -1,0 +1,25 @@
+<p-card>
+  <ng-template pTemplate="header">
+    <p-toolbar>
+      <div class="p-toolbar-group-start">
+          <span class="p-card-title">Clothes</span>
+      </div>
+
+      <div class="p-toolbar-group-end">
+        <p-button icon="pi pi-search"></p-button>
+
+        <p-button label="New" class="ml-2" icon="pi pi-plus" [routerLink]="['/clothing']"></p-button>
+
+      </div>
+    </p-toolbar>
+  </ng-template>
+  <div class="grid">
+  <div *ngFor="let clothe of clothesList;index as i" class="col-12 md:col-6 lg:col-4">
+    <app-clothing-display [clothing]="clothe" ></app-clothing-display>
+  </div>
+  </div>
+
+  <ng-template pTemplate="footer">
+    Footer content here
+  </ng-template>
+</p-card>
