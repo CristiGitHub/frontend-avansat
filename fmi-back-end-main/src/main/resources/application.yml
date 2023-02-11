@@ -1,0 +1,33 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+    banner-mode: off
+  application:
+    name: API-FMI
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hephaestus
+    driveClassName: org.postgresql.Driver
+    username: admin
+    password: admin
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: filesystem:flyway/db
+  jpa:
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        show_sql: true
+#        hbm2ddl:
+#          auto: create-drop
+keycloak:
+  auth-server-url: http://localhost:8080/auth
+  realm: hephaestus
+  resource: backendapi
+  public-client: true
+  cors: true
+
+server:
+  port: 8085
+
